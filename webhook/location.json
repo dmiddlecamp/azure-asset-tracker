@@ -1,0 +1,22 @@
+{
+    "eventName": "gps_coords",
+    "url": "https://YOUR_PROJECT_NAME.servicebus.windows.net/YOUR_BUS_NAME/messages",
+    "requestType": "POST",
+	"json": {
+		"latitude": "{{lat}}",
+		"longitude": "{{lon}}",
+		"altitude": "{{a}}",
+		"quality": "{{q}}",
+		"satellites": "{{s}}",
+		"battery_vcc": "{{vcc}}",
+		"battery_soc": "{{soc}}",
+		"published_at": "{{SPARK_PUBLISHED_AT}}",
+		"coreid": "{{SPARK_CORE_ID}}"
+	},
+    "azure_sas_token": {
+        "key_name": "RootManageSharedAccessKey",
+        "key": "YOUR_AZURE_KEY"
+    },
+	"nodefaults": true,
+    "mydevices": true
+}
