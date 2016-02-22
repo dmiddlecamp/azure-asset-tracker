@@ -6,9 +6,14 @@ Setting up your Particle Webhook to Azure Service Bus
     https://manage.windowsazure.com
     
 2.) Setup a messaging Service Bus and remember the name, in this case we're using "sandbox-location1"
+![ServiceBus Setup](images/001_servicebus.png)
+
 
 3.) It should automatically open the window for the new Service Bus.
 Click on the connection Information button at the bottom, and copy out that connection string.
+
+![Connection Info](images/002_connection_info.png)
+
 
 ```
     Endpoint=sb://__YOUR_NAMESPACE__.servicebus.windows.net/;
@@ -17,7 +22,7 @@ Click on the connection Information button at the bottom, and copy out that conn
 ```
 
 4.) Click on "EVENT HUBS" under your new Service Bus.  Quick Create a new Event Hub, in this case "coords".
-
+![Event Hub Setup](images/003_event_hub.png)
 
 5.) Open up location.json, the example webhook configuration file.  Change the azure_sas_token key to your new key from
 the info you found above.  Replace "YOUR_PROJECT_NAME" with the namespace of your Service Bus, in this case, 
@@ -77,4 +82,4 @@ Listening to: /v1/devices/events
 
 8.) You won't see a hook-response since Azure didn't send anything back.  It might take 10-15 minutes for the Event Hubs dashboard to update, but you
 should eventually see the events arriving:
-
+![Event Hub Dashboard](images/004_dashboard.png)
